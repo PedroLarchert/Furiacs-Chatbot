@@ -14,7 +14,8 @@ frontend/.next/
 frontend/dist/
 frontend/out/
 *.tsbuildinfo
-
+# ========== LLM  ========== 
+*.gguf
 # ========== AMBIENTE (.env) ==========
 .env
 .env.*
