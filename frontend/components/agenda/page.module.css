@@ -1,0 +1,55 @@
+.agendaContent {
+  padding: 0 20px 20px;
+}
+
+.section {
+  margin-bottom: 30px;
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.subtitle {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #ddd;
+  font-family: var(--font-montserrat);
+  font-weight: 600;
+}
+
+.list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.listItem {
+  margin-bottom: 8px;
+  font-size: 14px;
+  padding: 8px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.listItem:hover {
+  background-color: #222;
+}
+
+@media (max-width: 768px) {
+  .agendaContent {
+    padding: 0 15px 15px;
+  }
+
+  .section {
+    margin-bottom: 20px;
+    padding: 10px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+  }
+
+  .listItem {
+    font-size: 13px;
+    padding: 6px;
+  }
+}

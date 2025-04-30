@@ -1,0 +1,154 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #121212;
+  color: white;
+}
+
+.container {
+  display: flex;
+  height: calc(100vh - 80px);
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.sidebar {
+  height: 100%;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #444 #222;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+  background-color: #111;
+}
+
+.sidebarHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #333;
+}
+
+.sidebarHeader h2 {
+  color: #084186;
+  font-family: var(--font-exo);
+  font-size: 20px;
+  margin: 0;
+  background: linear-gradient(to right, #0D7BF6, #084186);
+  background-clip: text;             /* padrão */
+  -webkit-background-clip: text;     /* necessário para Chrome, Safari */
+  
+  color: transparent;                /* padrão */
+  -webkit-text-fill-color: transparent; /* Safari/Chrome */
+}
+
+.leftSidebar {
+  width: 260px;
+  border-right: 1px solid #333;
+}
+
+.rightSidebar {
+  width: 320px;
+  border-left: 1px solid #333;
+}
+
+.chatContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: #1a1a1a;
+}
+
+.toggleButton,
+.mobileToggle {
+  background-color: #0D7BF6;
+  color: #000;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.toggleButton {
+  position: fixed;
+  z-index: 100;
+}
+
+.toggleButton:hover,
+.mobileToggle:hover {
+  background-color: #084186;
+  transform: scale(1.05);
+}
+
+.toggleButton svg,
+.mobileToggle svg {
+  width: 24px;
+  height: 24px;
+}
+
+.leftToggle {
+  top: 50px;
+  left: 10px;
+}
+
+.rightToggle {
+  top: 50px;
+  right: 10px;
+}
+
+/* Mobile and tablet styles */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 240px;
+  }
+  .rightSidebar {
+    width: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    position: relative;
+  }
+
+  .sidebar {
+    position: absolute;
+    top: 0;
+    z-index: 50;
+    height: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 260px;
+  }
+
+  .leftSidebar {
+    left: 0;
+    width: 260px;
+  }
+
+  .rightSidebar {
+    right: 0;
+    width: 280px;
+  }
+
+  .sidebarHidden {
+    transform: translateX(-100%);
+  }
+
+  .rightSidebar.sidebarHidden {
+    transform: translateX(100%);
+  }
+
+  .chatContainer {
+    width: 100%;
+  }
+}

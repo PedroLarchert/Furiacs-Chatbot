@@ -1,0 +1,29 @@
+# ========== BACKEND (FastAPI / Python) ==========
+api/venv/
+api/__pycache__/
+__pycache__/
+*.py[cod]
+*.pyo
+*.log
+*.bak
+*.tmp
+
+# ========== FRONTEND (Next.js / Node.js) ==========
+frontend/node_modules/
+frontend/.next/
+frontend/dist/
+frontend/out/
+*.tsbuildinfo
+
+# ========== AMBIENTE (.env) ==========
+.env
+.env.*
+.env.*.local
+
+# ========== EDITORES ==========
+.vscode/
+.idea/
+
+# ========== SISTEMA ==========
+.DS_Store
+Thumbs.db

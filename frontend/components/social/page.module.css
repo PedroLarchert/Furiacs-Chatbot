@@ -1,0 +1,113 @@
+.socialContent {
+  padding: 0 15px 20px;;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 20px 0;
+  color:  #084186;
+  background: linear-gradient(to right, #0D7BF6, #084186);
+  background-clip: text;             /* padrão */
+  -webkit-background-clip: text;     /* necessário para Chrome, Safari */
+  
+  color: transparent;                /* padrão */
+  -webkit-text-fill-color: transparent; /* Safari/Chrome */
+  font-family: var(--font-exo);
+}
+
+.section {
+  margin-bottom: 30px;
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.socialIcons {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.socialIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #222;
+  color: #0D7BF6;
+  transition: all 0.2s ease;
+}
+
+.socialIcon:hover {
+  background-color: #0D7BF6;
+  color: #000;
+  transform: scale(1.1);
+}
+
+.tweetsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.tweetWrapper {
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 15px;
+  width: 100%;
+  max-width: 100%;
+  transform: scale(0.9); /* Make tweets slightly smaller */
+  transform-origin: top center;
+}
+
+.tweetWrapper .twitter-tweet {
+  margin: 0 auto !important;
+  width: 100% !important;
+}
+
+.loading,
+.error,
+.noTweets {
+  padding: 20px;
+  text-align: center;
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.loading {
+  color: #0D7BF6;
+}
+
+.error {
+  color: #ff4d4d;
+}
+
+@media (max-width: 768px) {
+  .socialContent {
+    padding: 0 15px 15px;
+  }
+
+  .title {
+    font-size: 18px;
+    margin: 15px 0;
+  }
+
+  .section {
+    margin-bottom: 20px;
+    padding: 10px;
+  }
+
+  .socialIcon {
+    width: 36px;
+    height: 36px;
+  }
+  .tweetWrapper {
+    transform: scale(0.85); /* Make tweets even smaller on mobile */
+  }
+}

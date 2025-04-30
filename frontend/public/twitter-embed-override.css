@@ -1,0 +1,16 @@
+/* Custom styles to override Twitter embed sizing */
+.twitter-tweet {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  
+  .twitter-tweet-rendered {
+    margin: 0 auto !important;
+    max-width: 100% !important;
+  }
+  
+  iframe.twitter-tweet-rendered {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  

@@ -1,0 +1,38 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --max-width: 1440px;
+  --montserrat: var(--font-montserrat);
+  --exo: var(--font-exo);
+  background-color: #1b1b1b;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    background-color: #1b1b1b;
+  }
+}
+
+p {
+  font-family: var(--font-montserrat);
+}
+
+a {
+  color: lightblue;
+}
+
+html {
+  color-scheme: dark;
+}

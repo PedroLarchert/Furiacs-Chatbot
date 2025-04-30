@@ -1,0 +1,70 @@
+.textBar {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.textBarUpper {
+  width: 100%;
+  min-height: 50px;
+  max-height: 120px;
+  border-radius: 24px;
+  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  border: 1px solid #333;
+}
+
+.inputTextBar {
+  width: 100%;
+  min-height: 40px;
+  max-height: 100px;
+  border: 0;
+  background-color: transparent;
+  outline: none;
+  margin-left: 20px;
+  padding: 10px 0;
+  resize: none;
+  overflow-y: auto;
+  font-size: 16px;
+  color: white;
+  font-family: var(--font-montserrat);
+}
+
+.imageButton {
+  margin-right: 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  background-color: #0D7BF6;
+  border-radius: 50%;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageButton:hover {
+  transform: scale(1.1);
+  background-color:  #084186;
+}
+
+.inputTextBar::placeholder {
+  font-size: 16px;
+  font-family: var(--font-montserrat);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.textBarDown {
+  text-align: center;
+  width: 100%;
+}
+
+.pTextBarDown {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 4px;
+}
