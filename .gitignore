@@ -16,6 +16,7 @@ frontend/out/
 *.tsbuildinfo
 # ========== LLM  ========== 
 *.gguf
+models/
 # ========== AMBIENTE (.env) ==========
 .env
 .env.*

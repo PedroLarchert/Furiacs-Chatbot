@@ -1,20 +1,25 @@
 import requests
+import os
 from rag import RAGFuria
+from llama_cpp import Llama
 
+
+# Inicialização do modelo (fora da função) usando llama-cpp(mais facil)
+BASE_DIR = os.path.dirname(__file__)  # <-- pega o caminho da pasta 'api'
+model_path = os.path.join(BASE_DIR, "models", "Hermes-3-Llama-3.1-8B.Q4_K_M.gguf")
+llm = Llama(model_path=model_path, n_ctx=2048, chat_format="chatml", verbose=True)
 
 def send_to_llm(mensagem: str,resultado):
-    # Endpoint
-    url = "http://127.0.0.1:1234/v1/chat/completions"
+    # Endpoint se quiser subir a llm em um servidor compilando o llama cli
+   # url = "http://127.0.0.1:1234/v1/chat/completions"
 
-    # Cabeçalhos (headers)
+    #se for usar llm via requequisição http
+    """" Cabeçalhos (headers)
     headers = {
         "Content-Type": "application/json"
     }
 
-    #rag = RAGFuria()
-    #rag.carregar_base_e_indexar('perguntas_respostas_agenda_furia.json', 'dataset_furia_rag_general.json')
-    #rag.salvar_index()
-    #resultado = rag.buscar_pergunta(mensagem)
+    
     mensagem_montada ="a mensagem do usuário foi:"+ mensagem 
     data = {
         "model": "local-model",  
@@ -27,8 +32,9 @@ def send_to_llm(mensagem: str,resultado):
 
     response = None
     try:
-        response = requests.post(url, headers=headers, json=data, timeout=60 )
-        response.raise_for_status()
+       # response = requests.post(url, headers=headers, json=data, timeout=60 )
+       # response.raise_for_status()
+       #response = llm("Q: Quem é a FURIA Esports?\nA:", max_tokens=100)
     except requests.exceptions.Timeout:
         return "O nosso assistente demorou demais para responder.", 408  # 408 Request Timeout
     except requests.exceptions.RequestException as e:
@@ -43,5 +49,36 @@ def send_to_llm(mensagem: str,resultado):
         return "Erro desconhecido ao consultar LLM.", response.status_code if response else 500
 
        # print(response.text)
+     """
+    
+    #utilizando o llama-cpp
 
+    # Mensagem do "system" com instruções + contexto do RAG
+    system_msg = (
+        "Você é um assistente da FURIA Esports que responde os fãs APENAS sobre: "
+        "o time de COUNTER STRIKE, o jogo CS2, jogadores e produtos da loja oficial (https://www.furia.gg). "
+        "Sempre responda de forma educada e em PORTUGUÊS.\n"
+        "Use somente os dados a seguir como base para a resposta. "
+        "Se a pergunta não puder ser respondida com base nesses dados, diga que não é possível responder.\n\n"
+        f"### CONTEXTO RAG ###\n{resultado}"
+    )
+
+    # Estrutura de mensagens no formato chat (estilo OpenAI)
+    messages = [
+        {"role": "system", "content": system_msg},
+        {"role": "user", "content": mensagem}
+    ]
+
+    try:
+        response = llm.create_chat_completion(
+            messages=messages,
+            max_tokens=400,
+            temperature=0.3,
+            stop=["</s>"]
+        )
+        resposta = response["choices"][0]["message"]["content"].strip()
+        return resposta, 200
+
+    except Exception as e:
+        return f" Erro ao gerar resposta: {e}", 500
 ##send_to_llm("quanto foi o jogo da furia contra a astralis?")
