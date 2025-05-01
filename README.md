@@ -19,13 +19,9 @@ Um chatbot inteligente especializado no time de CS2 da FURIA Esports. Responde p
 
 ```
 Furia-Chatbot/
-├── api/                         # Backend FastAPI
+├── api/
+     └── models/Hermes-3-Llama...    # Modelo GGUF                       
 ├── frontend/                    # Frontend Next.js
-├── LLM/
-│   └── NousResearch/
-│       └── Hermes-3-Llama...    # Modelo GGUF
-├── scripts/                     # Scripts auxiliares
-├── Dockerfile / docker-compose.yml
 └── README.md
 ```
 
