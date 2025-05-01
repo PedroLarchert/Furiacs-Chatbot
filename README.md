@@ -54,45 +54,6 @@ pip install -r requirements.txt
 python download_model.py
 
 ```
-### 2. Rodar o backend (FastAPI)
-
-```bash
-uvicorn main:app --reload
-ou
-fastapi dev main.py
-
-### 3. Rodar o frontend (Next.js)
-
-```bash
-cd frontend
-npm install
-npm run dev
-```
-
-
-## 🛠️ Como rodar o projeto localmente
-
-### 1. Clone o repositório
-
-```bash
-git clone https://github.com/PedroLarchert/furia-chatbot.git
-cd furia-chatbot
-```
-
-### 2. Baixar modelo LLM
-
-```bash
-cd api
-python -m venv nome_do_ambiente (cria um ambiente virtual python)
-
-nome_do_ambiente/bin/activate (Linux/macOS)
-ou
-nome_do_ambiente\Scripts\activate (Windows)
-
-pip install -r requirements.txt
-python download_model.py
-```
-
 ### 3. Rodar o backend (FastAPI)
 
 ```bash
@@ -146,7 +107,7 @@ Basta configurar o modelo `.gguf` e usar chamadas HTTP compatíveis com OpenAI.
 ---
 
 > O modelo deve estar salvo em `api/models/Hermes-3-Llama-3.1-8B.Q4_K_M.gguf`
-
+> o arquivo api/sendToLLM.py, possui o esqueleto para enviar requests http para a llm que estiver rodando em um servidor no modelo de chat/completions
 
 
 ---
