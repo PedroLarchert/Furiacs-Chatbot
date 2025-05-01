@@ -11,7 +11,7 @@ Um chatbot inteligente especializado no time de CS2 da FURIA Esports. Responde p
 - 🧠 **Modelo LLM**: [Nous Hermes 3 - LLaMA 3.1 8B (GGUF)](https://huggingface.co/NousResearch/Hermes-3-Llama-3.1-8B-GGUF)
 - 🧾 **Formato do modelo**: GGUF (usando `llama.cpp`)
 - 🔍 **Dados em tempo real**: Scraping da HLTV
-- 🐳 **(Opcional)**: Docker para padronização e deploy
+  
 
 ---
 
@@ -39,7 +39,7 @@ cd furia-chatbot
 ### 2. Baixar modelo LLM 
 
 ```bash
-cd api
+cd Furiacs-Chatbot/api
 python -m venv nome_do_ambiente (cria um ambioente virtual python)
 
 nome_do_ambiente/bin/activate (Linux/macOS)
@@ -53,6 +53,7 @@ python download_model.py
 ### 3. Rodar o backend (FastAPI)
 
 ```bash
+
 uvicorn main:app --reload
 ou
 fastapi dev main.py
@@ -61,7 +62,7 @@ fastapi dev main.py
 ### 4. Rodar o frontend (Next.js)
 
 ```bash
-cd frontend
+cd Furiacs-Chatbot/frontend
 npm install
 npm run dev
 ```
