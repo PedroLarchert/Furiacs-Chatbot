@@ -40,13 +40,26 @@ git clone https://github.com/PedroLarchert/furia-chatbot.git
 cd furia-chatbot
 ```
 
-### 2. Rodar o backend (FastAPI)
+### 2. Baixar modelo LLM 
 
 ```bash
 cd api
+python -m venv nome_do_ambiente (cria um ambioente virtual python)
+
+nome_do_ambiente/bin/activate (Linux/macOS)
+ou
+nome_do_ambiente\Scripts\activate (Windows).
+
 pip install -r requirements.txt
-uvicorn main:app --reload
+python download_model.py
+
 ```
+### 2. Rodar o backend (FastAPI)
+
+```bash
+uvicorn main:app --reload
+ou
+fastapi dev main.py
 
 ### 3. Rodar o frontend (Next.js)
 
@@ -56,14 +69,85 @@ npm install
 npm run dev
 ```
 
-### 4. Rodar o servidor LLM com modelo GGUF
+
+## 🛠️ Como rodar o projeto localmente
+
+### 1. Clone o repositório
 
 ```bash
-cd LLM/NousResearch/Hermes-3-Llama-3.1-8B-GGUF
-./server.exe -m Hermes-3-Llama-3.1-8B.Q4_K_M.gguf --port 8000 --api
+git clone https://github.com/PedroLarchert/furia-chatbot.git
+cd furia-chatbot
 ```
 
-> A API da LLM ficará disponível em `http://localhost:8000/v1/chat/completions`
+### 2. Baixar modelo LLM
+
+```bash
+cd api
+python -m venv nome_do_ambiente (cria um ambiente virtual python)
+
+nome_do_ambiente/bin/activate (Linux/macOS)
+ou
+nome_do_ambiente\Scripts\activate (Windows)
+
+pip install -r requirements.txt
+python download_model.py
+```
+
+### 3. Rodar o backend (FastAPI)
+
+```bash
+uvicorn main:app --reload
+ou
+fastapi dev main.py
+```
+
+### 4. Rodar o frontend (Next.js)
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+> O projeto atualmente utiliza o modelo Hermes 3 - LLaMA 3.1 8B em formato `.gguf`, rodando localmente com `llama-cpp-python`, mas também é compatível com execução via binário manual (`llama-cli`) ou LM Studio.
+
+###  Outras formas de rodar o modelo:
+
+####  Padrão (integrado ao backend): `llama-cpp-python`
+
+O modelo roda dentro do Python e responde diretamente via FastAPI.
+
+```python
+from llama_cpp import Llama
+llm = Llama(model_path="api/models/Hermes-3-Llama-3.1-8B.Q4_K_M.gguf")
+```
+
+####  Alternativa 1 – CLI compilado (`llama.cpp`)
+
+Você pode clonar e compilar manualmente:
+
+```bash
+git clone https://github.com/ggerganov/llama.cpp
+cd llama.cpp
+cmake -B build
+cmake --build build
+./build/bin/llama-cli -m path/para/seu/modelo.gguf
+```
+
+####  Alternativa 2 – LM Studio
+
+Ferramenta com interface gráfica que permite rodar o modelo e expor uma API local em:
+```
+http://localhost:1234/v1/chat/completions
+```
+
+Basta configurar o modelo `.gguf` e usar chamadas HTTP compatíveis com OpenAI.
+
+---
+
+> O modelo deve estar salvo em `api/models/Hermes-3-Llama-3.1-8B.Q4_K_M.gguf`
+
+
 
 ---
 
@@ -73,7 +157,7 @@ cd LLM/NousResearch/Hermes-3-Llama-3.1-8B-GGUF
 - 📅 Agenda de partidas (via scraping)
 - 📊 Resultado de jogadores
 - 🛒 Informações sobre a loja oficial
--     Últimos tweets no x (via scraping)
+- 👍Últimos tweets no x (via scraping)
 
 ---
 
