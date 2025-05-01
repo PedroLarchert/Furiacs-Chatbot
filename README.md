@@ -8,7 +8,7 @@ Um chatbot inteligente especializado no time de CS2 da FURIA Esports. Responde p
 
 - ⚙️ **Backend**: [FastAPI](https://fastapi.tiangolo.com/)
 - 🌐 **Frontend**: [Next.js](https://nextjs.org/)
-- 🧠 **Modelo LLM**: [Nous Hermes 3 - LLaMA 3.1 8B (GGUF)](https://huggingface.co/NousResearch/Hermes-3-Llama-3.1-8B-GGUF)
+- 🧠 **Modelo LLM**: [Nous Hermes 3 - LLaMA 3.1 8B (GGUF)](https://huggingface.co/NousResearch/Hermes-3-Llama-3.1-8B-GGUF) com RAG
 - 🧾 **Formato do modelo**: GGUF (usando `llama.cpp`)
 - 🔍 **Dados em tempo real**: Scraping da HLTV
   
@@ -119,9 +119,21 @@ Basta configurar o modelo `.gguf` e usar chamadas HTTP compatíveis com OpenAI.
 
 ---
 
-## 📦 (Opcional) Rodar com Docker
+## Desafios enfrentados no projeto
 
-> Em breve...
+Durante o desenvolvimento do projeto, alguns obstáculos técnicos exigiram soluções alternativas. Entre os principais desafios, destacam-se:
+
+#### Scraping de status ao vivo
+
+O objetivo era mostrar o status "ao vivo" de partidas da FURIA,e integrar esses dados, ao conjunto de dados que faz parte do RAG para a LLM, incluindo placar parcial, mapas e informações de picks/bans. Inicialmente, tentou-se fazer scraping do site da HLTV.org. No entanto, esse site implementa diversos bloqueios contra scraping, como:
+
+Cloudflare e verificação JavaScript
+
+Necessidade de simular um navegador real
+
+Mudanças frequentes na estrutura HTML
+
+ Solução utilizada: foi feito um script com Selenium e user-agent customizado para testes locais, inadequado para ambientes de produção, o mais adequado seria utilizar uma API paga oficial com suporte garantido a dados em tempo real.
 
 ---
 
