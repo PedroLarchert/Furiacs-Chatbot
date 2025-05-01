@@ -1,4 +1,4 @@
-# 🤖 FURIA Chatbot
+#  FURIA Chatbot
 <img src="assets/Furia.png" alt="FURIA Logo" width="100"/>
 Um chatbot inteligente especializado no time de CS2 da FURIA Esports. Responde perguntas sobre jogadores, partidas, estatísticas, loja oficial, e muito mais — utilizando uma LLM local com modelo em formato GGUF.
 
