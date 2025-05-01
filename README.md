@@ -125,7 +125,7 @@ Durante o desenvolvimento do projeto, alguns obstáculos técnicos exigiram solu
 
 #### Scraping de status ao vivo
 
-O objetivo era mostrar o status "ao vivo" de partidas da FURIA,e integrar esses dados, ao conjunto de dados que faz parte do RAG para a LLM, incluindo placar parcial, mapas e informações de picks/bans. Inicialmente, tentou-se fazer scraping do site da HLTV.org. No entanto, esse site implementa diversos bloqueios contra scraping, como:
+O objetivo era mostrar o status "ao vivo" de partidas da FURIA,e integrar esses dados, ao conjunto de dados que faz parte do RAG para a LLM, incluindo placar parcial, mapas e informações de picks/bans. Inicialmente, tentou-se fazer scraping do site da HLTV.org. No entanto, esse site implementa diversos bloqueios contra scraping nas página com as informações das partidas, como:
 
 Cloudflare e verificação JavaScript
 
