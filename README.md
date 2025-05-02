@@ -136,7 +136,7 @@ Durante o desenvolvimento do projeto, alguns obstáculos técnicos exigiram solu
 
 #### Encontrar um modelo LLM reduzido e quantizado satisfatório 
 Depois de muitos testes com modelos de LLM, alguns modelos maiores inclusive, com 8B e 9B com quantização mais precisa, que não obtiveram resultados tão bons quanto os desse pequeno modelo.<br>
-De certo que há muitos modelos maiores, que trariam respostas melhores para esta tarefa,mas que exigiriam poder computacional muito grande para um projeto local, fugindo do próposito deste projeto<br>
+De certo que há muitos modelos maiores, que trariam respostas melhores para esta tarefa,mas que exigiriam poder computacional muito grande para um processo local, fugindo do próposito deste projeto<br>
 Inclusive uma opção para esse projeto seria utilizar as Apis de LLMs pagas como da OpenAI ou da Deepseek
 
 #### Scraping e status ao vivo
