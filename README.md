@@ -1,6 +1,6 @@
 #  FURIA Chatbot
 <img src="assets/Furia.png" alt="FURIA Logo" width="100"/>
-Um chatbot inteligente especializado no time de CS2 da FURIA Esports. Responde perguntas sobre jogadores, partidas, estatísticas, loja oficial, e muito mais — utilizando uma LLM local com modelo em formato GGUF.
+Um chatbot inteligente especializado no time de CS2 da FURIA Esports. Responde perguntas sobre jogadores, partidas, estatísticas, loja oficial, e muito mais — utilizando uma LLM local com RAG em um modelo em formato GGUF.
 
 ---
 
@@ -28,6 +28,11 @@ Furia-Chatbot/
 ---
 
 ## 🛠️ Como rodar o projeto localmente
+### 0. Requsisitos Iniciais
+
+> -Instale Python, pip e venv
+  -Instale o Node.js e npm
+  -Instale o Chrome + ChromeDriver do zero
 
 ### 1. Clone o repositório
 
