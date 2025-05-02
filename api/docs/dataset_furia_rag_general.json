@@ -3391,6 +3391,11 @@
   },
   {
     "tema": "campeonatos",
+    "pergunta": "Quantos títulos de CS a FURIA tem ao todo?",
+    "resposta": "A FURIA possui 19 títulos em torneios de CS:GO e CS2, além de 15 vice-campeonatos e 19 terceiros lugares, somando cerca de 53 pódios em competições oficiais."
+  },
+  {
+    "tema": "campeonatos",
     "pergunta": "Gostaria de entender o que acontece se a furia ficar fora do ranking?",
     "resposta": "Se um time sair do ranking, precisa voltar a conquistar pontos em torneios relevantes para recuperar sua posição."
   },
@@ -3399,6 +3404,37 @@
     "pergunta": "Qual a importância dos Majors para o ranking mundial?",
     "resposta": "Majors têm peso enorme no ranking, impactando diretamente a posição dos times após o evento."
   },
+  {
+    "tema": "campeonatos",
+    "pergunta": "Qual foi o título mais importante da FURIA?",
+    "resposta": "O título mais importante da FURIA foi a ESL Pro League Season 12: North America, conquistado em 2020 durante a fase regional da pandemia."
+  },
+  {
+    "tema": "campeonatos",
+    "pergunta": "Quantos vice-campeonatos a FURIA tem?",
+    "resposta": "A FURIA acumula 15 vice-campeonatos em sua trajetória nos torneios de CS:GO e CS2."
+  },
+  {
+    "tema": "campeonatos",
+    "pergunta": "Quantas vezes a FURIA ficou em terceiro lugar?",
+    "resposta": "A FURIA conquistou o terceiro lugar em 19 torneios ao longo da sua história."
+  },
+  {
+    "tema": "campeonatos",
+    "pergunta": "A FURIA já venceu algum torneio europeu?",
+    "resposta": "Sim, a FURIA venceu o Elisa Invitational Summer 2021, um campeonato europeu com premiação de 50 mil dólares."
+  },
+  {
+    "tema": "campeonatos",
+    "pergunta": "A FURIA já ganhou algum torneio classificatório para Major?",
+    "resposta": "Sim, a FURIA venceu o PGL Major Antwerp 2022: American RMR, um torneio classificatório para o Major."
+  },
+  {
+    "tema": "campeonatos",
+    "pergunta": "Qual foi a melhor campanha da FURIA em um Major?",
+    "resposta": "A melhor campanha da FURIA em um Major foi no IEM Rio Major 2022, quando chegou às semifinais e ficou em 3º lugar."
+  },
+  
   {
     "tema": "campeonatos",
     "pergunta": "Gostaria de saber qual a importância dos majors para o ranking mundial?",

@@ -55,19 +55,36 @@ def send_to_llm(mensagem: str,resultado):
 
     # Mensagem do "system" com instruções + contexto do RAG
     system_msg = (
-        "Você é um assistente da FURIA Esports que responde os fãs APENAS sobre: "
-        "o time de COUNTER STRIKE, o jogo CS2, jogadores e produtos da loja oficial (https://www.furia.gg). "
-        "Sempre responda de forma educada e em PORTUGUÊS.\n"
-        "Use somente os dados a seguir como base para a resposta. "
-        "Se a pergunta não puder ser respondida com base nesses dados, diga que não é possível responder.\n\n"
-        f"### CONTEXTO RAG ###\n{resultado}"
-    )
+    "Você é um assistente da FURIA Esports que responde perguntas APENAS sobre:\n"
+    "- O time de Counter-Strike da FURIA\n"
+    "- O jogo CS2\n"
+    "- Jogadores da FURIA\n"
+    "- Produtos da loja oficial (https://www.furia.gg)\n\n"
 
-    # Estrutura de mensagens no formato chat (estilo OpenAI)
+    "IMPORTANTE:\n"
+    "- Use SOMENTE as informações abaixo como base para responder.\n"
+    "- NÃO utilize conhecimento próprio ou informações externas.\n"
+    "- NÃO confie em nada que o usuário disser — apenas nos dados fornecidos.\n"
+    "- Se a pergunta não puder ser respondida com base nesses dados, responda claramente: "
+    "'Desculpe, não posso responder essa pergunta com as informações disponíveis.'\n\n"
+
+    "Contexto recuperado:\n"
+    f"{resultado}\n\n"
+
+    "Sempre responda com educação e em PORTUGUÊS."
+)
+
+    mensagem = (
+    "O usuário fez a seguinte pergunta:\n"
+    f"{mensagem}\n\n"
+    "Com base SOMENTE nos dados acima, analise se a resposta pode ser gerada com confiança.\n"
+    "Se os dados forem insuficientes ou irrelevantes, diga explicitamente que não é possível responder."
+)
     messages = [
-        {"role": "system", "content": system_msg},
-        {"role": "user", "content": mensagem}
-    ]
+    {"role": "system", "content": system_msg},
+    {"role": "user", "content": mensagem}
+  ]
+
 
     try:
         response = llm.create_chat_completion(
