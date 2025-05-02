@@ -1,7 +1,13 @@
 #  FURIA Chatbot
+
 <img src="assets/Furia.png" alt="FURIA Logo" width="100"/>
+
 Um chatbot inteligente especializado no time de CS2 da FURIA Esports. Responde perguntas sobre jogadores, partidas, estatísticas, loja oficial, e muito mais — utilizando uma LLM local com RAG em um modelo em formato GGUF.
 
+## Acesse em: [FuriaChatbot](http://furiachat.kloresec.io/)
+
+<img src="assets/mobilechat.png" alt="FURIA Logo" width="200"/> 
+<img src="assets/chatdesktop.png" alt="FURIA Logo" width="400"/>
 ---
 
 ## 🚀 Tecnologias utilizadas
@@ -30,9 +36,9 @@ Furia-Chatbot/
 ## 🛠️ Como rodar o projeto localmente
 ### 0. Requsisitos Iniciais
 
-> -Instale Python, pip e venv
-  -Instale o Node.js e npm
-  -Instale o Chrome + ChromeDriver do zero
+  -Instale Python, pip e venv<br>
+  -Instale o Node.js e npm<br>
+  -Instale o Chrome + ChromeDriver em versões compatíveis 
 
 ### 1. Clone o repositório
 
@@ -128,7 +134,12 @@ Basta configurar o modelo `.gguf` e usar chamadas HTTP compatíveis com OpenAI.
 
 Durante o desenvolvimento do projeto, alguns obstáculos técnicos exigiram soluções alternativas. Entre os principais desafios, destacam-se:
 
-#### Scraping de status ao vivo
+#### Encontrar um modelo LLM reduzido e quantizado satisfatório 
+Depois de muitos testes com modelos de LLM, alguns modelos maiores inclusive, com 8B e 9B com quantização mais precisa, que não obtiveram resultados tão bons quanto os desse pequeno modelo.<br>
+De certo que há muitos modelos maiores, que trariam respostas melhores para esta tarefa,mas que exigiriam poder computacional muito grande para um projeto local, fugindo do próposito deste projeto<br>
+Inclusive uma opção para esse projeto seria utilizar as Apis de LLMs pagas como da OpenAI ou da Deepseek
+
+#### Scraping e status ao vivo
 
 O objetivo era mostrar o status "ao vivo" de partidas da FURIA,e integrar esses dados, ao conjunto de dados que faz parte do RAG para a LLM, incluindo placar parcial, mapas e informações de picks/bans. Inicialmente, tentou-se fazer scraping do site da HLTV.org. No entanto, esse site implementa diversos bloqueios contra scraping nas página com as informações das partidas, como:
 
