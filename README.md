@@ -80,6 +80,7 @@ npm run dev
 ```
 ### Observações:
 > - A velocidade das respostas do chat depende do poder computacional da máquina, se a máquina tiver nucleos Cuda, é ainda melhor.<br>
+> - Se tiver nucleos Cuda antes de iniciar de rodar o backend, Você pode rodar LLAMA_CUBLAS=1 pip install llama-cpp-python --force-reinstall, para utilizá-los em vez de usar a CPU
 > - O chat pode cometer erros e fugir do contexto em alguns casos, como utiliza um modelo pequeno e quantizado, ele pode fugir algumas vezes do prompt e alucinar, inventando informações.<br>
 > - O projeto atualmente utiliza o modelo Hermes 3 - LLaMA 3.1 8B em formato `.gguf`, rodando localmente com `llama-cpp-python`, mas também é compatível com execução via binário manual (`llama-cli`) ou LM Studio.<br>
 > - Em caso de problemas para rodar localmente, você pode acessar pelo link: [http://furiachat.kloresec.io/](http://furiachat.kloresec.io/)<br>
