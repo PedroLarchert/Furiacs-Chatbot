@@ -35,10 +35,10 @@ Furia-Chatbot/
 
 ## 🛠️ Como rodar o projeto localmente
 ### 0. Requsisitos Iniciais
-
-  -Instale Python, pip e venv<br>
-  -Instale o Node.js e npm<br>
-  -Instale o Chrome + ChromeDriver em versões compatíveis 
+  - Recomendável rodar em uma máquina com pelo menos 8gb de Ram LIVRE<br>
+  - Instale Python, pip e venv<br>
+  - Instale o Node.js e npm<br>
+  - Instale o Chrome + ChromeDriver em versões compatíveis 
 
 ### 1. Clone o repositório
 
@@ -53,9 +53,10 @@ cd furia-chatbot
 cd Furiacs-Chatbot/api
 python -m venv nome_do_ambiente (cria um ambioente virtual python)
 
+
 nome_do_ambiente/bin/activate (Linux/macOS)
 ou
-nome_do_ambiente\Scripts\activate (Windows).
+nome_do_ambiente\Scripts\activate (Windows). (ativar o ambiente)
 
 pip install -r requirements.txt
 python download_model.py
@@ -77,10 +78,13 @@ cd Furiacs-Chatbot/frontend
 npm install
 npm run dev
 ```
+### Observações:
+> - A velocidade das respostas do chat depende do poder computacional da máquina, se a máquina tiver nucleos Cuda, é ainda melhor.<br>
+> - O chat pode cometer erros e fugir do contexto em alguns casos, como utiliza um modelo pequeno e quantizado, ele pode fugir algumas vezes do prompt e alucinar, inventando informações.<br>
+> - O projeto atualmente utiliza o modelo Hermes 3 - LLaMA 3.1 8B em formato `.gguf`, rodando localmente com `llama-cpp-python`, mas também é compatível com execução via binário manual (`llama-cli`) ou LM Studio.<br>
+> - Em caso de problemas para rodar localmente, você pode acessar pelo link: [http://furiachat.kloresec.io/](http://furiachat.kloresec.io/)<br>
 
-> O projeto atualmente utiliza o modelo Hermes 3 - LLaMA 3.1 8B em formato `.gguf`, rodando localmente com `llama-cpp-python`, mas também é compatível com execução via binário manual (`llama-cli`) ou LM Studio.
-
-###  Outras formas de rodar o modelo:
+###  Outras formas de rodar o modelo LLM:
 
 ####  Padrão (integrado ao backend): `llama-cpp-python`
 
