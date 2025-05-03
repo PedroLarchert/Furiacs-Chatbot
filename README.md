@@ -4,7 +4,7 @@
 
 Um chatbot inteligente especializado no time de CS2 da FURIA Esports. Responde perguntas sobre jogadores, partidas, estatísticas, loja oficial, e muito mais — utilizando uma LLM local com RAG em um modelo em formato GGUF.
 
-## Acesse em: [FuriaChatbot](http://furiachat.kloresec.io/)
+### Acesse em: [FuriaChatbot](http://furiachat.kloresec.io/)
 
 <img src="assets/mobilechat.png" alt="FURIA Logo" width="200"/> 
 <img src="assets/chatdesktop.png" alt="FURIA Logo" width="400"/>
