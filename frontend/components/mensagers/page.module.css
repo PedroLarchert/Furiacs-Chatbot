@@ -20,6 +20,7 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
+  max-width: calc(100% - 52px);
 }
 
 .text h2 {
@@ -36,12 +37,16 @@
   border-radius: 12px;
   max-width: 80%;
   position: relative;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  width: fit-content;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .right .messageContent {
   background-color: #333;
   border-top-right-radius: 4px;
+  margin-left: auto; 
 }
 
 .left .messageContent {
@@ -105,7 +110,9 @@
   justify-content: flex-start;
   align-items: flex-start;
 }
-
+.right .text {
+  align-items: flex-end;
+}
 .left {
   display: flex;
   flex-direction: row;
