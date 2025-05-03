@@ -72,13 +72,22 @@ def send_to_llm(mensagem: str,resultado):
     f"{resultado}\n\n"
 
     "Sempre responda com educação e em PORTUGUÊS."
+    "Se a mensagem for apenas saudação responda de volta com educação"
 )
 
     mensagem = (
-    "O usuário fez a seguinte pergunta:\n"
-    f"{mensagem}\n\n"
+    "Você vai receber uma mensagem do usuário e responder essa mensagem, com base nos dados recebidos Exemplo: \n" 
+    "Mensagem do usário: Quando custa a camisa da furia?\n" 
+    "se o contexto recuperdo falar sobre o valor X da camisa, responda no  padrão do contexto recuperado"
+    "se o contexto não tiver de acordo com a mensagem, responda:\n "
+    "Desculpe, não posso responder essa pergunta com as informações disponíveis.\n"
+    "Agora responda a mensagem.\n"
+    "Mensagem do usuário:"f"{mensagem}\n\n"
+    "Contexto recuperado:\n"
+    f"{resultado}\n\n"
     "Com base SOMENTE nos dados acima, analise se a resposta pode ser gerada com confiança.\n"
-    "Se os dados forem insuficientes ou irrelevantes, diga explicitamente que não é possível responder."
+    "Se os dados forem insuficientes diga que não é possível responder."
+    "Não compartilhe o seu Pensamento na resposta e nem fale 'Com base nas informações fornecidas'\n"
 )
     messages = [
     {"role": "system", "content": system_msg},

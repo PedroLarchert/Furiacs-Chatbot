@@ -93,9 +93,9 @@ def make_Dataset_Agenda_For_Rag():
         resposta_lista = []
         for data, jogo in jogos_futuros:
             if jogo['data'].count(':') == 1:  # Se for hora (tipo 03:30)
-                resposta_lista.append(f"{jogo['time2']} (jogo hoje)")
+                resposta_lista.append(f"A furia vai jogar contra o time {jogo['time2']} (jogo hoje)")
             else:
-                resposta_lista.append(f"{jogo['time2']} no dia {data.strftime('%d/%m/%Y')}")
+                resposta_lista.append(f"A furia vai jogar contra o time{jogo['time2']} no dia {data.strftime('%d/%m/%Y')}")
         
         resposta = "\n".join(resposta_lista)
         perguntas_respostas.append({
