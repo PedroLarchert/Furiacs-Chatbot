@@ -1,4 +1,5 @@
-#  FURIA Chatbot
+#  FurIA
+## Projeto de chatbot com IA para a Furia
 
 <img src="assets/Furia.png" alt="FURIA Logo" width="100"/>
 
