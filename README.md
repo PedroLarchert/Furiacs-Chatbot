@@ -7,8 +7,8 @@ Um chatbot inteligente especializado no time de CS2 da FURIA Esports. Responde p
 
 ### Acesse em: [FuriaChatbot](http://furiachat.kloresec.io/)
 
-<img src="assets/mobilechat.png" alt="FURIA Logo" width="200"/> 
-<img src="assets/chatdesktop.png" alt="FURIA Logo" width="400"/>
+<img src="assets/mobilechat.png" alt="FURIAmobile" width="200"/> 
+<img src="assets/chatdesktop.png" alt="FURIApc" width="400"/>
 ---
 
 ## 🚀 Tecnologias utilizadas
